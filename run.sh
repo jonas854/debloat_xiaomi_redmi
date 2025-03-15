@@ -85,84 +85,28 @@ function BASIC() {
     echo
 }
 
-# Limpeza Moderada
-function LIGHT() {
-    local conf_path="conf/light.conf"
-    local conf_fullpath="${PWD}/${conf_path}"
-    local command
-
-    # Verificando se o arquivo "$conf_fullpath" existe
-    [[ -e "$conf_fullpath" ]] ||
-        DIE "O arquivo de configuração $conf_fullpath não foi encontrado."
-
-    echo "+++++++++++++++ Limpeza Moderada"
-    sleep 1s
-    while read -r command; do
-        # Ignora linhas que começam com # ou contêm a palavra 'others'
-        echo "[ADB] Executando: uninstall $command"
-        adb shell -n pm uninstall --user 0 "$command"
-    done < "$conf_fullpath"
-
-    echo
-    echo "Função 'Limpeza Moderada' finalizado com êxito."
-    echo
-}
-
-# Limpeza Pesada
-function HEAVY() {
-    local conf_path="conf/heavy.conf"
-    local conf_fullpath="${PWD}/${conf_path}"
-    local command
-
-    # Verificando se o arquivo "$conf_fullpath" existe
-    [[ -e "$conf_fullpath" ]] ||
-        DIE "O arquivo de configuração $conf_fullpath não foi encontrado."
-
-    echo "+++++++++++++++ Limpeza Pesada"
-    sleep 1s
-    while read -r command; do
-        # Ignora linhas que começam com # ou contêm a palavra 'others'
-        echo "[ADB] Executando: uninstall $command"
-        adb shell -n pm uninstall --user 0 "$command"
-    done < "$conf_fullpath"
-
-    echo "[ADB] Executando: install-existing com.sec.android.soagent"
-    adb shell cmd package install-existing com.sec.android.soagent
-
-    echo "[ADB] Executando: install-existing com.sec.android.systemupdate"
-    adb shell cmd package install-existing com.sec.android.systemupdate
-
-    echo
-    echo "Função 'Limpeza Pesada' finalizado com êxito."
-    echo
-}
-
 ########## Main
 
 cat <<EOF
 
 
-▗▄▄▄  ▗▞▀▚▖▗▖   █  ▄▄▄  ▗▞▀▜▌   ■  ▗▞▀▚▖   ▐▌     ▗▄▄▖▗▞▀▜▌▄▄▄▄   ▄▄▄ █  ▐▌▄▄▄▄
-▐▌  █ ▐▛▀▀▘▐▌   █ █   █ ▝▚▄▟▌▗▄▟▙▄▖▐▛▀▀▘   ▐▌    ▐▌   ▝▚▄▟▌█ █ █ ▀▄▄  ▀▄▄▞▘█   █
-▐▌  █ ▝▚▄▄▖▐▛▀▚▖█ ▀▄▄▄▀        ▐▌  ▝▚▄▄▖▗▞▀▜▌     ▝▀▚▖     █   █ ▄▄▄▀      █   █
-▐▙▄▄▀      ▐▙▄▞▘█              ▐▌       ▝▚▄▟▌    ▗▄▄▞▘                         ▗▄▖
-                               ▐▌                                             ▐▌ ▐▌
- V: 1.0                                                                        ▝▀▜▌
-                                                                              ▐▙▄▞▘
+__________           .___      .__      .___    ___.   .__                __             .___
+\______   \ ____   __| _/_____ |__|   __| _/____\_ |__ |  |   _________ _/  |_  ____   __| _/
+ |       _// __ \ / __ |/     \|  |  / __ |/ __ \| __ \|  |  /  _ \__  \\   __\/ __ \ / __ | 
+ |    |   \  ___// /_/ |  Y Y  \  | / /_/ \  ___/| \_\ \  |_(  <_> ) __ \|  | \  ___// /_/ | 
+ |____|_  /\___  >____ |__|_|  /__| \____ |\___  >___  /____/\____(____  /__|  \___  >____ | 
+        \/     \/     \/     \/          \/    \/    \/                \/          \/     \/
+ V: 1.0
 
  1) - Ajustes Iniciais
- 2) - Limpeza Básica    - Conta Samsung/Samsung Health/Galaxy AI se mantém.
- 3) - Limpeza moderada  - Para usuários sem uma conta Samsung.
- 4) - Limpeza Pesada    - !!! Otimização máxima do sistema !!!
- 5) - Sair
+ 2) - Limpeza Básica
+ 3) - Sair
 EOF
 read -r -p $'\n Escolha [1-5]: ' menu
 case $menu in
     1) TWEAKS ;;
     2) BASIC ;;
-    3) LIGHT ;;
-    4) HEAVY ;;
-    5) exit 0 ;;
+    3               ) exit 0 ;;
     [a-zA-Z]) echo "Somente números."; exit 1 ;;
     *) echo "Opção Inválida."; exit 1 ;;
 esac
