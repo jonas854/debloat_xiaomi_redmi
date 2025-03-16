@@ -81,7 +81,7 @@ function BASIC() {
     done < "$conf_fullpath"
 
     echo
-    echo "Função 'Limpeza Básica' finalizado com êxito."
+    echo "Função 'Limpeza Básica' finalizada com sucesso."
     echo
 }
 
