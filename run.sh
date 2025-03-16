@@ -102,7 +102,7 @@ __________           .___      .__      .___    ___.   .__                __    
  2) - Limpeza Básica
  3) - Sair
 EOF
-read -r -p $'\n Escolha [1-5]: ' menu
+read -r -p $'\n Escolha [1-3]: ' menu
 case $menu in
     1) TWEAKS ;;
     2) BASIC ;;
