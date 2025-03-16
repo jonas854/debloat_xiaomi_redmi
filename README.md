@@ -1,29 +1,27 @@
-# Debloat Samsung devices
+# Debloat Xiaomi Redmi devices
 
-Qualquer Smartphone Samsung se beneficia deste programa deixando até 100% mais rápido e consumindo menos bateria.
+Testado com Redmi Note 10s
 
 * Necessário ter o [adb](https://developer.android.com/tools/adb) (android-tools) instalado em sua distribuição GNU/Linux.
-* Opção do desenvolvedor [HABILITADO em seu celular]
+* Opções de desenvolvedor [HABILITADO em seu celular]
 * Depuração USB [HABILITADO em seu celular]
-* APLICATIVOS que você instalou não serão removidos!
 
 ## Instalar e Executar
 
 ```bash
-git clone https://github.com/slackjeff/debloated_Samsung
-cd debloated_Samsung
+git clone https://github.com/abairo/debloated_xiaomi_redmi
+cd debloated_xiaomi_redmi
 bash run.sh
 ```
 
 ### Tipos de limpeza
 
 * Ajustes Iniciais: Otimizações (Bateria, Atividade segundo plano, etc...)
-* Básica: Conta Samsung/Samsung Health/Galaxy AI se mantém.
-* Moderada: Para usuários sem uma conta Samsung.
-* Pesada: !!! Otimização máxima do sistema !!!
+* Básica: Remove aplicativos e serviços indesejados, por favor revise a lista `basic.conf` antes de prosseguir.
 
 ### Agradecimento
 
 Este programa foi um fork (debloat_samsung_android) feito para Windows. Foi adaptado em Shell Script para executar em distribuições Linux.
 
 <https://github.com/invinciblevenom/debloat_samsung_android>
+<https://github.com/slackjeff/debloated_Samsung>

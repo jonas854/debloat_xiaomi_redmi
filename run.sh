@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 ###########################################################################
-# Adjust for Linux Distribuitions by Slackjeff.
+# Tuned for Xiaomi Redmi Note 10s by abairo.
 #
-# THKS! Fork: https://github.com/invinciblevenom/debloat_samsung_android
+# THKS! Fork: https://github.com/slackjeff/debloated_Samsung
 ###########################################################################
 
 
