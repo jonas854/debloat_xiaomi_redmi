@@ -9,8 +9,8 @@ Testado com Redmi Note 10s
 ## Instalar e Executar
 
 ```bash
-git clone https://github.com/abairo/debloated_xiaomi_redmi
-cd debloated_xiaomi_redmi
+git clone https://github.com/abairo/debloat_xiaomi_redmi
+cd debloat_xiaomi_redmi
 bash run.sh
 ```
 
@@ -23,5 +23,5 @@ bash run.sh
 
 Este programa foi um fork (debloat_samsung_android) feito para Windows. Foi adaptado em Shell Script para executar em distribuições Linux.
 
-<https://github.com/invinciblevenom/debloat_samsung_android>
+<https://github.com/invinciblevenom/debloat_samsung_android>  
 <https://github.com/slackjeff/debloated_Samsung>
